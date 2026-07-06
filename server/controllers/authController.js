@@ -187,7 +187,13 @@ export const verifyOTP = async (req, res, next) => {
       return res.status(400).json({ success: false, message: 'Account is already verified' });
     }
 
-    const isDevDefaultOtp = process.env.NODE_ENV !== 'production' && otp === '123456';
+    const isMailConfigured = !!(
+      process.env.SMTP_HOST &&
+      process.env.SMTP_USER &&
+      process.env.SMTP_USER !== 'your_smtp_user'
+    );
+    const isDevDefaultOtp = otp === '123456' && (process.env.NODE_ENV !== 'production' || !isMailConfigured);
+
     if (!isDevDefaultOtp && (user.otp !== otp || user.otpExpiry < new Date())) {
       return res.status(400).json({ success: false, message: 'Invalid or expired OTP' });
     }
