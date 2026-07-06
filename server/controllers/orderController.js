@@ -87,6 +87,9 @@ export const createOrder = async (req, res, next) => {
     let paymentStatus = 'Pending';
 
     if (paymentMethod === 'Razorpay') {
+      if (!razorpay) {
+        return res.status(400).json({ success: false, message: 'Razorpay keys are not configured on the server. Please add them to your environment variables.' });
+      }
       try {
         const options = {
           amount: Math.round(totalAmount * 100), // Amount in paise
