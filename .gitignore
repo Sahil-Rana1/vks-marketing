@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Production builds
+dist/
+dist-ssr/
+*.local
+
+# Secrets and credentials
+.env
+server/.env
+
+# System/IDE files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
