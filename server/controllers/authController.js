@@ -485,6 +485,14 @@ export const resetPassword = async (req, res, next) => {
  */
 export const getUserProfile = async (req, res, next) => {
   try {
+    if (mongoose.connection.readyState !== 1) {
+      const mockUser = MOCK_USERS_DB.find(u => u._id === req.user._id);
+      if (!mockUser) {
+        return res.status(404).json({ success: false, message: 'User not found (Mock mode)' });
+      }
+      return res.status(200).json({ success: true, user: mockUser });
+    }
+
     const user = await User.findById(req.user._id).select('-password');
     if (!user) {
       return res.status(404).json({ success: false, message: 'User not found' });
@@ -504,6 +512,15 @@ export const updateUserAddresses = async (req, res, next) => {
   const { addresses } = req.body; // array of addresses
 
   try {
+    if (mongoose.connection.readyState !== 1) {
+      const mockUser = MOCK_USERS_DB.find(u => u._id === req.user._id);
+      if (!mockUser) {
+        return res.status(404).json({ success: false, message: 'User not found (Mock mode)' });
+      }
+      mockUser.addresses = addresses;
+      return res.status(200).json({ success: true, message: 'Addresses updated successfully (Mock mode)', addresses: mockUser.addresses });
+    }
+
     const user = await User.findById(req.user._id);
     if (!user) {
       return res.status(404).json({ success: false, message: 'User not found' });
