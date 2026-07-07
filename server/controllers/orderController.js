@@ -7,6 +7,7 @@ import User from '../models/User.js';
 import { MOCK_PRODUCTS_DATA } from './productController.js';
 import razorpay from '../config/razorpay.js';
 import crypto from 'crypto';
+const MOCK_ORDERS_DB = [];
 
 /**
  * @desc    Create a new order (Checkout)
@@ -56,6 +57,8 @@ export const createOrder = async (req, res, next) => {
         ],
         createdAt: new Date()
       };
+
+      MOCK_ORDERS_DB.push(mockOrder);
 
       return res.status(200).json({
         success: true,
@@ -272,8 +275,22 @@ export const getMyOrders = async (req, res, next) => {
 export const getOrderById = async (req, res, next) => {
   try {
     if (mongoose.connection.readyState !== 1 || req.params.id.startsWith('mock_order_')) {
-      // Return a temporary mock order detail view
-      const mockOrder = {
+      const existingMockOrder = MOCK_ORDERS_DB.find(o => o._id === req.params.id);
+      if (existingMockOrder) {
+        const populatedOrder = {
+          ...existingMockOrder,
+          user: {
+            _id: req.user._id,
+            name: req.user.name,
+            email: req.user.email,
+            phone: req.user.phone || '9876543210'
+          }
+        };
+        return res.status(200).json({ success: true, order: populatedOrder });
+      }
+
+      // Return a temporary mock order detail view fallback
+      const defaultMockOrder = {
         _id: req.params.id,
         user: {
           _id: req.user._id,
@@ -312,7 +329,7 @@ export const getOrderById = async (req, res, next) => {
         createdAt: new Date()
       };
 
-      return res.status(200).json({ success: true, order: mockOrder });
+      return res.status(200).json({ success: true, order: defaultMockOrder });
     }
 
     const order = await Order.findById(req.params.id)
