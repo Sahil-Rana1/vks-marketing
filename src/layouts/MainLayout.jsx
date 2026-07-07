@@ -69,7 +69,7 @@ const MainLayout = () => {
   const searchRef = useRef(null);
   const profileRef = useRef(null);
 
-  const [liveActivity, setLiveActivity] = useState(null);
+
 
   const { isDark, toggleTheme } = useTheme();
   const { showToast } = useToast();
@@ -116,42 +116,7 @@ const MainLayout = () => {
     }
   }, [location.pathname]);
 
-  // Live Purchase Activity Notification Simulator
-  useEffect(() => {
-    const locations = ['Delhi', 'Mumbai', 'Bangalore', 'Noida', 'Pune', 'Hyderabad', 'Chennai', 'Gurgaon'];
-    const names = ['Rahul', 'Ananya', 'Rajesh', 'Priya', 'Amit', 'Neha', 'Vikram', 'Sneha'];
-    const productsList = [
-      '3-in-1 Soap Dispenser Set',
-      'Airtight Storage Jars',
-      'Hanging Sunglasses Organizer',
-      'Hexagon Power Spike Guard',
-      'Rotating Cosmetic Stand'
-    ];
 
-    const triggerNotification = () => {
-      const randomName = names[Math.floor(Math.random() * names.length)];
-      const randomLoc = locations[Math.floor(Math.random() * locations.length)];
-      const randomProd = productsList[Math.floor(Math.random() * productsList.length)];
-      
-      setLiveActivity({ name: randomName, location: randomLoc, product: randomProd });
-
-      // Dismiss after 4.5 seconds
-      setTimeout(() => {
-        setLiveActivity(null);
-      }, 4500);
-    };
-
-    // First trigger after 12 seconds
-    const initialTimer = setTimeout(triggerNotification, 12000);
-
-    // Repeat every 24 seconds
-    const interval = setInterval(triggerNotification, 24000);
-
-    return () => {
-      clearTimeout(initialTimer);
-      clearInterval(interval);
-    };
-  }, []);
 
   // Shrink navbar on scroll
   useEffect(() => {
@@ -781,37 +746,7 @@ const MainLayout = () => {
         </div>
       </footer>
 
-      {/* Live Activity Notification Badge */}
-      <AnimatePresence>
-        {liveActivity && (
-          <motion.div
-            initial={{ opacity: 0, x: -30, y: 15 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            exit={{ opacity: 0, x: -30, scale: 0.95 }}
-            transition={{ duration: 0.35 }}
-            className="fixed bottom-6 left-6 z-[9999] bg-white dark:bg-[#131722] border border-gray-255 dark:border-white/5 shadow-2xl rounded-2xl p-4 max-w-sm flex items-center gap-3.5 text-left transition-colors duration-300"
-          >
-            <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary text-base flex-shrink-0 animate-pulse">
-              <FiShoppingCart />
-            </div>
-            <div className="min-w-0 flex-grow">
-              <p className="text-[9px] text-primary font-black uppercase tracking-wider">Recent Activity</p>
-              <h4 className="text-xs font-bold text-gray-800 dark:text-white truncate mt-0.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                {liveActivity.name} from {liveActivity.location}
-              </h4>
-              <p className="text-[10px] text-gray-400 dark:text-gray-500 font-semibold truncate mt-0.5">
-                Purchased: {liveActivity.product}
-              </p>
-            </div>
-            <button
-              onClick={() => setLiveActivity(null)}
-              className="text-gray-400 dark:text-gray-650 hover:text-black dark:hover:text-white ml-2 flex-shrink-0 text-xs focus:outline-none"
-            >
-              ✕
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* Gamified Spin to Win Floating Widget */}
       <SpinToWin />
