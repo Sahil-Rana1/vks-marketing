@@ -19,7 +19,7 @@ const MOCK_ANALYTICS = {
   totalCustomers: 12,
   totalProducts: 6,
   lowStockProducts: [
-    { _id: 'mock_p4', title: '360° Rotating Cosmetic Organizer', stock: 3, price: 1499, sku: 'CO-04' }
+    { _id: 'mock_p4', title: '360° Rotating Cosmetic Organizer', stock: 3, price: 1499, sku: 'CO-04', slug: 'rotating-cosmetic-organizer' }
   ],
   recentOrders: [
     { _id: 'mock_o1', user: { name: 'Sumit Sharma', email: 'sumit@example.com' }, totalAmount: 3198, orderStatus: 'Processing', createdAt: new Date() },
@@ -304,12 +304,22 @@ const DashboardOverview = () => {
               analytics.lowStockProducts.map((prod) => (
                 <div key={prod._id} className="p-3 border border-amber-500/10 bg-amber-500/5 rounded-2xl flex justify-between items-center text-xs">
                   <div>
-                    <h4 className="font-bold text-secondary dark:text-white truncate w-32">{prod.title}</h4>
+                    <h4 className="font-bold text-secondary dark:text-white truncate w-24">{prod.title}</h4>
                     <p className="text-[10px] text-customGray font-semibold mt-0.5">SKU: {prod.sku}</p>
                   </div>
-                  <span className="font-black text-red-500 bg-red-500/10 px-2 py-1 rounded-lg">
-                    {prod.stock} Left
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {prod.slug && (
+                      <Link
+                        to={`/product/${prod.slug}`}
+                        className="px-2.5 py-1.5 bg-primary/20 hover:bg-primary hover:text-black rounded-lg text-[9px] font-black uppercase text-primary transition-all"
+                      >
+                        View
+                      </Link>
+                    )}
+                    <span className="font-black text-red-500 bg-red-500/10 px-2 py-1 rounded-lg">
+                      {prod.stock} Left
+                    </span>
+                  </div>
                 </div>
               ))
             ) : (

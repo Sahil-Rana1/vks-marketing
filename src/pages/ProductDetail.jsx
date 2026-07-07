@@ -437,7 +437,7 @@ const ProductDetail = () => {
           )}
 
           {/* Active Stock Bar */}
-          {currentProduct.stock > 0 && (
+          {currentProduct.stock > 0 ? (
             <div className={`mb-6 p-4 rounded-2xl space-y-2 ${
               currentProduct.stock <= 10 
                 ? 'bg-red-500/5 border border-red-500/10' 
@@ -459,6 +459,11 @@ const ProductDetail = () => {
                   style={{ width: `${Math.min(100, (currentProduct.stock / 20) * 100)}%` }}
                 />
               </div>
+            </div>
+          ) : (
+            <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-2xl flex items-center gap-2.5 font-bold text-xs select-none">
+              <span className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
+              <span>🔴 Out of Stock: This item is sold out. We are working to restock soon.</span>
             </div>
           )}
 
