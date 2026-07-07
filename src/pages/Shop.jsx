@@ -408,10 +408,10 @@ const Shop = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4 }}
-                    className="bg-white dark:bg-[#131722] border border-black/[0.04] dark:border-white/5 rounded-[32px] p-5 flex flex-col justify-between relative shadow-[0_12px_35px_rgba(139,92,26,0.025)] hover:shadow-[0_22px_48px_rgba(245,158,11,0.09)] hover:-translate-y-2 transition-all duration-500 group text-left h-[460px] overflow-visible"
+                    className="bg-white dark:bg-[#131722] border border-gray-200/80 dark:border-white/5 rounded-[24px] p-5 flex flex-col justify-between relative shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:shadow-[0_20px_40px_rgba(255,107,0,0.08)] dark:hover:shadow-[0_20px_40px_rgba(255,107,0,0.15)] hover:-translate-y-1.5 transition-all duration-500 group text-left h-[460px] overflow-visible"
                   >
                     {/* Product Image Frame */}
-                    <div className="w-full h-48 bg-[#F5F5F3] dark:bg-black/25 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden group">
+                    <div className="w-full h-48 bg-gray-50/40 dark:bg-black/25 rounded-2xl flex items-center justify-center p-4 relative overflow-hidden group">
                       <img
                         src={prod.images[0]}
                         alt={prod.title}

@@ -295,7 +295,7 @@ const MainLayout = () => {
       <nav
         className={`fixed left-1/2 -translate-x-1/2 z-50 max-w-7xl w-[95%] rounded-full border transition-all duration-500 ${
           isScrolled
-            ? 'top-4 py-2 px-6 bg-[#F5F5F3]/95 dark:bg-[#121212]/95 border-primary/20 shadow-[0_20px_50px_rgba(245,158,11,0.15)] backdrop-blur-xl'
+            ? 'top-4 py-2 px-6 bg-white/95 dark:bg-[#121212]/95 border-primary/20 shadow-[0_20px_50px_rgba(255,107,0,0.12)] backdrop-blur-xl'
             : 'top-10 py-3.5 px-8 bg-white/95 dark:bg-[#181818]/95 border-white/5 shadow-2xl backdrop-blur-md'
         }`}
       >

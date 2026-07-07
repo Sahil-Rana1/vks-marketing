@@ -117,7 +117,7 @@ const App = () => {
       <ToastProvider>
         <Suspense
           fallback={
-            <div className="h-screen w-screen flex flex-col justify-center items-center bg-[#F5F5F3] dark:bg-[#0A0D14] transition-colors duration-300 select-none">
+            <div className="h-screen w-screen flex flex-col justify-center items-center bg-white dark:bg-[#0A0D14] transition-colors duration-300 select-none">
               <div className="relative flex items-center justify-center w-24 h-24">
                 {/* Outer spinning rings */}
                 <div className="absolute inset-0 animate-spin rounded-full border-[3px] border-t-primary border-b-primary border-l-transparent border-r-transparent" />

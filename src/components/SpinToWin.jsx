@@ -348,7 +348,7 @@ const SpinToWin = () => {
                   ref={canvasRef}
                   width="220"
                   height="220"
-                  className="rounded-full shadow-lg border-2 border-[#F5F5F3]/25 bg-black/[0.02]"
+                  className="rounded-full shadow-lg border-2 border-gray-200/20 bg-black/[0.02]"
                 />
               </div>
 
