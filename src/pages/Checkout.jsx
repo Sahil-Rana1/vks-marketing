@@ -162,6 +162,16 @@ const Checkout = () => {
       const res = await API.post('/orders', orderData);
       
       if (res.data.success) {
+        // Persistently decrement mock products stock in localStorage on client side
+        items.forEach((item) => {
+          const prodId = item.product._id;
+          if (prodId && prodId.startsWith('mock_')) {
+            const currentStock = item.product.stock;
+            const newStock = Math.max(0, currentStock - item.quantity);
+            localStorage.setItem('mock_stock_' + prodId, newStock.toString());
+          }
+        });
+
         dispatch(setCart({ items: [] })); // Clear cart locally
         
         if (paymentMethod === 'Razorpay') {

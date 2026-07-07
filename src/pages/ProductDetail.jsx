@@ -23,9 +23,126 @@ import { setCurrentProduct, setRelatedProducts, setBoughtTogether, setProductRev
 
 // Fallback Mock data for development
 const MOCK_PRODUCTS = [
-  { _id: 'mock_p1', title: 'Automatic Soap & Sanitizer Dispenser', slug: 'automatic-soap-dispenser', description: 'Touchless automatic infrared sensor soap dispenser for kitchen and bathroom. Premium matte finish with leak-proof design. Operates on smart battery saving tech.', price: 1299, discount: 15, images: ['https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=600&auto=format&fit=crop'], category: { name: 'Kitchen & Bathroom', slug: 'kitchen-bathroom', _id: 'mock_cat_kb' }, rating: 4.8, stock: 25, featured: true, trending: true, sku: 'SD-01', brand: 'VKS Marketing', features: ['Touchless Automatic Sensor', 'Waterproof IPX4 base', 'Adjustable soap volumes', 'Large 400ml capacity'], specifications: [{ key: 'Material', value: 'High grade ABS + PC' }, { key: 'Power', value: '4 AA Batteries' }, { key: 'Capacity', value: '400 ml' }], size: ['Standard', 'Family Pack'], color: ['Matte Black', 'Frost White'] },
-  { _id: 'mock_p2', title: 'UV Sterilizer Toothbrush Holder', slug: 'uv-toothbrush-holder', description: 'Wall-mounted toothbrush holder with UV-C sanitizing light. Holds 5 toothbrushes with automatic toothpaste dispenser.', price: 1899, discount: 20, images: ['https://images.unsplash.com/photo-1620626011761-996317b69766?q=80&w=600&auto=format&fit=crop'], category: { name: 'Bathroom Accessories', slug: 'bathroom-accessories', _id: 'mock_cat_ba' }, rating: 4.6, stock: 12, featured: true, trending: false, sku: 'TB-02', brand: 'VKS Marketing', features: ['UV-C Sterilization 99.9%', 'Holds up to 5 toothbrushes', 'Integrated toothpaste squeezer', 'USB rechargeable'], specifications: [{ key: 'Material', value: 'Eco-friendly Plastic' }, { key: 'Power', value: 'USB Charging' }, { key: 'Battery', value: '1200mAh' }], size: ['Universal'], color: ['Arctic White'] },
-  { _id: 'mock_p6', title: 'Airtight Kitchen Storage Container Set', slug: 'kitchen-storage-boxes', description: '7-piece modular leakproof dry food storage container set with labels and marker.', price: 1999, discount: 30, images: ['https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=600&auto=format&fit=crop'], category: { name: 'Kitchen & Dining', slug: 'kitchen-dining', _id: 'mock_cat_kd' }, rating: 4.9, stock: 20, featured: true, trending: true, sku: 'KB-06', brand: 'VKS Marketing', features: ['100% Leakproof Seal', 'Modular Stackable Design', 'BPA Free Material', 'Chalkboard Labels Included'], specifications: [{ key: 'Pieces Count', value: '7 Containers' }, { key: 'Material', value: 'BPA-Free Acrylic' }], size: ['7-Piece Set'], color: ['Clear Transparent'] }
+  {
+    _id: 'mock_p1',
+    title: '3 in 1 Soap Dispenser with Sponge Holder',
+    slug: '3-in-1-soap-dispenser',
+    description: 'Unbreakable 3-in-1 kitchen hand wash & dish soap dispenser with integrated sponge holder slot. Keeps counters clean and clutter-free.',
+    price: 249,
+    discount: 20,
+    images: ['https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=600&auto=format&fit=crop'],
+    category: { _id: 'mock_cat_kd', name: 'Kitchen & Dining', slug: 'kitchen-dining' },
+    rating: 4.9,
+    stock: 4,
+    featured: true,
+    trending: true,
+    sku: 'SD-3IN1',
+    brand: 'VKS Marketing',
+    color: ['Blue', 'Green'],
+    size: ['Standard'],
+    features: ['Unbreakable material', 'Space-saving design', 'Easy single-hand press'],
+    specifications: [{ key: 'Material', value: 'BPA-Free ABS' }, { key: 'Capacity', value: '400ml' }]
+  },
+  {
+    _id: 'mock_p2',
+    title: 'Hanging Multi-Slot Sunglasses Organizer',
+    slug: 'sunglasses-organizer',
+    description: 'Hanging wall-mounted sunglasses holder with multiple storage slots. Hard velvet lining protects goggles and eyewear.',
+    price: 381.50,
+    discount: 36,
+    images: ['https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop'],
+    category: { _id: 'mock_cat_ho', name: 'Home Organizers', slug: 'home-organizers' },
+    rating: 4.7,
+    stock: 15,
+    featured: true,
+    trending: true,
+    sku: 'SG-SLOTS',
+    brand: 'VKS Marketing',
+    color: ['Brown', 'Black'],
+    size: ['5-Slot', '6-Slot'],
+    features: ['Soft velvet padding', 'Roll-up layout', 'Sturdy brass hanger'],
+    specifications: [{ key: 'Material', value: 'PU Leather + Velvet' }, { key: 'Slots', value: '5 slots' }]
+  },
+  {
+    _id: 'mock_p3',
+    title: 'Toys & Cosmetic Organiser Box',
+    slug: 'cosmetic-organizer',
+    description: 'Multipurpose storage container basket with secure lid. Ideal for wardrobe organization, toys, makeup, and household clutter.',
+    price: 381.50,
+    discount: 36,
+    images: ['https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=600&auto=format&fit=crop'],
+    category: { _id: 'mock_cat_ho', name: 'Home Organizers', slug: 'home-organizers' },
+    rating: 4.6,
+    stock: 12,
+    featured: true,
+    trending: false,
+    sku: 'CO-BASKET',
+    brand: 'VKS Marketing',
+    color: ['White', 'Pink'],
+    size: ['Large'],
+    features: ['Eco friendly plastic', 'Clip lid locks', 'Integrated handles'],
+    specifications: [{ key: 'Material', value: 'Eco-PP Plastic' }, { key: 'Dimensions', value: '30x20x15 cm' }]
+  },
+  {
+    _id: 'mock_p4',
+    title: 'Travel Toothbrush Holder Cup',
+    slug: 'toothbrush-holder',
+    description: 'Portable travel toothbrush and toothpaste storage case cup. Compact square shape, perfect for outdoor camping and trips.',
+    price: 87.20,
+    discount: 56,
+    images: ['https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?q=80&w=600&auto=format&fit=crop'],
+    category: { _id: 'mock_cat_ba', name: 'Bathroom Accessories', slug: 'bathroom-accessories' },
+    rating: 4.5,
+    stock: 50,
+    featured: true,
+    trending: false,
+    sku: 'TB-TRAVEL',
+    brand: 'VKS Marketing',
+    color: ['Translucent Gray', 'Clear'],
+    size: ['Standard'],
+    features: ['Dustproof cap', 'Sturdy travel hanger', 'Double cup usage'],
+    specifications: [{ key: 'Material', value: 'Food-grade PP' }, { key: 'Weight', value: '90g' }]
+  },
+  {
+    _id: 'mock_p5',
+    title: 'Multi-functional Hexagon Extension Board',
+    slug: 'extension-board',
+    description: 'Hexagonal premium power strip extension board with 4 USB charging ports and 4 universal multi-plug outlets. Built-in surge protection spike guard.',
+    price: 359.70,
+    discount: 28,
+    images: ['https://images.unsplash.com/photo-1624996379697-f01d168b1a52?q=80&w=600&auto=format&fit=crop'],
+    category: { _id: 'mock_cat_he', name: 'Household Essentials', slug: 'household-essentials' },
+    rating: 4.8,
+    stock: 30,
+    featured: false,
+    trending: true,
+    sku: 'EB-HEX4',
+    brand: 'VKS Marketing',
+    color: ['Multi-color', 'White'],
+    size: ['1.8m Cord'],
+    features: ['Surge spike defender', 'Fire-resistant housing', '4 USB intelligent output ports'],
+    specifications: [{ key: 'Cord length', value: '1.8 meters' }, { key: 'USB Output', value: '5V 2.1A' }]
+  },
+  {
+    _id: 'mock_p6',
+    title: 'Airtight Kitchen Storage Container Set',
+    slug: 'kitchen-storage-boxes',
+    description: 'Modular leakproof dry kitchen storage container boxes. BPA free plastic with airtight vacuum snap locks.',
+    price: 1999,
+    discount: 30,
+    images: ['https://images.unsplash.com/photo-1595231712426-63d23a9ae100?q=80&w=600&auto=format&fit=crop'],
+    category: { _id: 'mock_cat_kd', name: 'Kitchen & Dining', slug: 'kitchen-dining' },
+    rating: 4.9,
+    stock: 20,
+    featured: true,
+    trending: true,
+    sku: 'KB-AIRLOCK',
+    brand: 'VKS Marketing',
+    color: ['Clear with black lids'],
+    size: ['7-Piece Set'],
+    features: ['Vacuum tight seal', 'Stackable space saver', 'Chalkboard labels included'],
+    specifications: [{ key: 'Material', value: 'FDA food-grade AS' }, { key: 'Count', value: '7 containers' }]
+  }
 ];
 
 const ProductDetail = () => {
@@ -63,6 +180,15 @@ const ProductDetail = () => {
         const res = await API.get(`/products/slug/${slug}`);
         if (res.data.success) {
           const product = res.data.product;
+
+          // Apply local persisted stock override for mock products
+          if (product._id && product._id.startsWith('mock_')) {
+            const savedStock = localStorage.getItem('mock_stock_' + product._id);
+            if (savedStock !== null) {
+              product.stock = parseInt(savedStock, 10);
+            }
+          }
+
           dispatch(setCurrentProduct({ product }));
 
           // Fetch reviews
@@ -74,7 +200,17 @@ const ProductDetail = () => {
           // Fetch related products
           const relatedRes = await API.get(`/products/related/${product._id}`);
           if (relatedRes.data.success) {
-            dispatch(setRelatedProducts(relatedRes.data.products));
+            const relatedProds = relatedRes.data.products;
+            // Apply local persisted stock overrides
+            relatedProds.forEach(p => {
+              if (p._id && p._id.startsWith('mock_')) {
+                const s = localStorage.getItem('mock_stock_' + p._id);
+                if (s !== null) {
+                  p.stock = parseInt(s, 10);
+                }
+              }
+            });
+            dispatch(setRelatedProducts(relatedProds));
           }
 
           // Fetch frequently bought together bundle
@@ -95,9 +231,25 @@ const ProductDetail = () => {
 
     const loadMockFallback = () => {
       const match = MOCK_PRODUCTS.find((p) => p.slug === slug) || MOCK_PRODUCTS[0];
+      
+      // Persistently load stock from localStorage if available in mock mode
+      const savedStock = localStorage.getItem('mock_stock_' + match._id);
+      if (savedStock !== null) {
+        match.stock = parseInt(savedStock, 10);
+      }
+
       dispatch(setCurrentProduct({ product: match }));
       
       const restMock = MOCK_PRODUCTS.filter((p) => p._id !== match._id);
+      
+      // Persistently load related products stock as well
+      restMock.forEach(p => {
+        const s = localStorage.getItem('mock_stock_' + p._id);
+        if (s !== null) {
+          p.stock = parseInt(s, 10);
+        }
+      });
+
       dispatch(setRelatedProducts(restMock));
       dispatch(setBoughtTogether(restMock.slice(0, 2)));
       dispatch(setProductReviews([
