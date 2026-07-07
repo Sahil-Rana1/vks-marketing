@@ -372,7 +372,7 @@ const Checkout = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Cash on Delivery */}
               <div
-                onClick={() => setTheme && setPaymentMethod('COD')}
+                onClick={() => setPaymentMethod('COD')}
                 className={`p-4 rounded-2xl border cursor-pointer flex justify-between items-center transition-all ${
                   paymentMethod === 'COD'
                     ? 'border-primary bg-primary/5 ring-1 ring-primary/20'
@@ -388,7 +388,7 @@ const Checkout = () => {
 
               {/* Razorpay gateway preparation */}
               <div
-                onClick={() => setTheme && setPaymentMethod('Razorpay')}
+                onClick={() => setPaymentMethod('Razorpay')}
                 className={`p-4 rounded-2xl border cursor-pointer flex justify-between items-center transition-all ${
                   paymentMethod === 'Razorpay'
                     ? 'border-primary bg-primary/5 ring-1 ring-primary/20'
