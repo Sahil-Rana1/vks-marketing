@@ -77,6 +77,8 @@ const AdminOrders = () => {
         return 'text-amber-500 bg-amber-500/10';
       case 'Shipped':
         return 'text-blue-500 bg-blue-500/10';
+      case 'Out for Delivery':
+        return 'text-indigo-500 bg-indigo-500/10';
       case 'Delivered':
         return 'text-emerald-500 bg-emerald-500/10';
       case 'Cancelled':
@@ -191,6 +193,7 @@ const AdminOrders = () => {
                     >
                       <option value="Processing">Processing</option>
                       <option value="Shipped">Shipped</option>
+                      <option value="Out for Delivery">Out for Delivery</option>
                       <option value="Delivered">Delivered</option>
                       <option value="Cancelled">Cancelled</option>
                     </select>

@@ -65,6 +65,9 @@ const DashboardOverview = () => {
 
         if (analRes.data.success) {
           setAnalytics(analRes.data.analytics);
+          if (analRes.data.analytics.lowStockProducts?.length > 0) {
+            showToast(`Inventory Alert: ${analRes.data.analytics.lowStockProducts.length} items are running low on stock!`, 'warning');
+          }
         } else {
           setAnalytics(MOCK_ANALYTICS);
         }
@@ -101,6 +104,21 @@ const DashboardOverview = () => {
 
   return (
     <div className="space-y-8 select-none text-left">
+
+      {/* Low Stock Warning Notification Banner */}
+      {analytics.lowStockProducts && analytics.lowStockProducts.length > 0 && (
+        <div className="bg-red-500/10 border border-red-500/20 text-red-500 dark:text-red-400 rounded-3xl p-5 flex items-center gap-4 shadow-sm select-none">
+          <div className="p-3 bg-red-500/20 rounded-2xl text-xl flex-shrink-0 animate-pulse">
+            <FiAlertTriangle className="text-red-500 dark:text-red-400" />
+          </div>
+          <div>
+            <h4 className="font-extrabold text-sm text-red-800 dark:text-red-400">Inventory Warning: Low Stock Detected!</h4>
+            <p className="text-xs text-red-650 dark:text-red-500 font-semibold mt-0.5">
+              There are {analytics.lowStockProducts.length} {analytics.lowStockProducts.length === 1 ? 'item' : 'items'} running low on stock (5 units or less). Please review the stock list below and replenish inventory.
+            </p>
+          </div>
+        </div>
+      )}
       
       {/* 1. Analytics Cards Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

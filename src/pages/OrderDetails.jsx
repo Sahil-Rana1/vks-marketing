@@ -32,7 +32,7 @@ const OrderDetails = () => {
   }, [id, showToast]);
 
   const getStepStatusIndex = (status) => {
-    const statuses = ['Processing', 'Shipped', 'Delivered'];
+    const statuses = ['Processing', 'Shipped', 'Out for Delivery', 'Delivered'];
     return statuses.indexOf(status);
   };
 
@@ -45,6 +45,7 @@ const OrderDetails = () => {
   const trackerSteps = [
     { label: 'Order Processed', status: 'Processing', description: 'Your order has been validated and is being packed.' },
     { label: 'Shipped Out', status: 'Shipped', description: 'Your order has left our Noida facility and is on its way.' },
+    { label: 'Out for Delivery', status: 'Out for Delivery', description: 'Our courier partner has picked up your package for local delivery.' },
     { label: 'Delivered', status: 'Delivered', description: 'Package has been signed for at your address.' }
   ];
 
