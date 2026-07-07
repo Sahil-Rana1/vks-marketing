@@ -436,22 +436,29 @@ const ProductDetail = () => {
             </div>
           )}
 
-          {/* Urgency Stock Warning Banner */}
-          {currentProduct.stock > 0 && currentProduct.stock <= 5 && (
-            <div className="mb-6 p-4 bg-red-500/5 border border-red-500/10 rounded-2xl space-y-2">
-              <div className="flex justify-between text-xs font-black text-red-500">
-                <span className="flex items-center gap-1.5 animate-pulse">🔥 Limited stock warning</span>
-                <span>Only {currentProduct.stock} left!</span>
+          {/* Active Stock Bar */}
+          {currentProduct.stock > 0 && (
+            <div className={`mb-6 p-4 rounded-2xl space-y-2 ${
+              currentProduct.stock <= 10 
+                ? 'bg-red-500/5 border border-red-500/10' 
+                : 'bg-emerald-500/5 border border-emerald-500/10'
+            }`}>
+              <div className={`flex justify-between text-xs font-black ${
+                currentProduct.stock <= 10 ? 'text-red-500' : 'text-emerald-500'
+              }`}>
+                <span className="flex items-center gap-1.5">
+                  {currentProduct.stock <= 10 ? '🔥 Limited stock warning' : '🟢 In Stock'}
+                </span>
+                <span>{currentProduct.stock} units available</span>
               </div>
-              <div className="w-full bg-red-500/10 h-1.5 rounded-full overflow-hidden">
+              <div className="w-full bg-customGray-light dark:bg-black/35 h-1.5 rounded-full overflow-hidden">
                 <div 
-                  className="bg-red-500 h-full rounded-full transition-all duration-500" 
-                  style={{ width: `${(currentProduct.stock / 5) * 100}%` }}
+                  className={`h-full rounded-full transition-all duration-500 ${
+                    currentProduct.stock <= 10 ? 'bg-red-500' : 'bg-emerald-500'
+                  }`} 
+                  style={{ width: `${Math.min(100, (currentProduct.stock / 20) * 100)}%` }}
                 />
               </div>
-              <p className="text-[10px] text-red-400 font-semibold leading-normal">
-                An estimated <span className="font-extrabold text-secondary dark:text-white">12 other shoppers</span> are looking at this item right now. Complete checkout to secure yours!
-              </p>
             </div>
           )}
 
@@ -639,7 +646,7 @@ const ProductDetail = () => {
       {/* 4. RELATED PRODUCTS PANEL */}
       {relatedProducts.length > 0 && (
         <section className="mb-16 text-left">
-          <h2 className="text-2xl font-black text-secondary dark:text-white mb-8">Related Products</h2>
+          <h2 className="text-2xl font-black text-secondary dark:text-white mb-8">Similar Products</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {relatedProducts.slice(0, 4).map((prod) => (
               <ProductCard key={prod._id} product={prod} />

@@ -399,7 +399,7 @@ export const getDashboardAnalytics = async (req, res, next) => {
     const totalProducts = await Product.countDocuments();
 
     // 5. Low stock alert (stock <= 5)
-    const lowStockProducts = await Product.find({ stock: { $lte: 5 } }).select('title stock price sku');
+    const lowStockProducts = await Product.find({ stock: { $lte: 10 } }).select('title stock price sku');
 
     // 6. Recent 5 orders
     const recentOrders = await Order.find({})

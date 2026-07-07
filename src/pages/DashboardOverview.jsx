@@ -114,7 +114,7 @@ const DashboardOverview = () => {
           <div>
             <h4 className="font-extrabold text-sm text-red-800 dark:text-red-400">Inventory Warning: Low Stock Detected!</h4>
             <p className="text-xs text-red-650 dark:text-red-500 font-semibold mt-0.5">
-              There are {analytics.lowStockProducts.length} {analytics.lowStockProducts.length === 1 ? 'item' : 'items'} running low on stock (5 units or less). Please review the stock list below and replenish inventory.
+              There are {analytics.lowStockProducts.length} {analytics.lowStockProducts.length === 1 ? 'item' : 'items'} running low on stock (10 units or less). Please review the stock list below and replenish inventory.
             </p>
           </div>
         </div>
