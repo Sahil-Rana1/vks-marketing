@@ -4,6 +4,7 @@ import Product from '../models/Product.js';
 import Cart from '../models/Cart.js';
 import Coupon from '../models/Coupon.js';
 import User from '../models/User.js';
+import { MOCK_PRODUCTS_DATA } from './productController.js';
 import razorpay from '../config/razorpay.js';
 import crypto from 'crypto';
 
@@ -23,6 +24,14 @@ export const createOrder = async (req, res, next) => {
   try {
     if (mongoose.connection.readyState !== 1) {
       // Mock order creation when database is offline
+      // Deduct mock products' stock in memory
+      for (const item of items) {
+        const mockProd = MOCK_PRODUCTS_DATA.find(p => p._id === item.product);
+        if (mockProd) {
+          mockProd.stock = Math.max(0, mockProd.stock - item.quantity);
+        }
+      }
+
       const mockOrder = {
         _id: 'mock_order_' + Date.now(),
         user: req.user._id,

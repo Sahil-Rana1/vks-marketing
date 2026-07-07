@@ -468,27 +468,22 @@ const ProductDetail = () => {
           )}
 
           {/* Quantity Selector & Add CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8 items-start sm:items-center">
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
             {currentProduct.stock > 0 && (
-              <div className="flex items-center gap-3">
-                <div className="flex border border-customGray-light dark:border-white/10 rounded-2xl overflow-hidden self-start select-none bg-white dark:bg-transparent">
-                  <button
-                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                    className="px-4 py-3 hover:bg-customGray-light dark:hover:bg-white/5 transition-colors font-bold"
-                  >
-                    -
-                  </button>
-                  <span className="px-6 py-3 self-center font-bold text-sm w-14 text-center">{quantity}</span>
-                  <button
-                    onClick={() => setQuantity((q) => Math.min(currentProduct.stock, q + 1))}
-                    className="px-4 py-3 hover:bg-customGray-light dark:hover:bg-white/5 transition-colors font-bold"
-                  >
-                    +
-                  </button>
-                </div>
-                <span className="text-xs font-bold text-customGray self-center">
-                  (Only {currentProduct.stock} available)
-                </span>
+              <div className="flex border border-customGray-light dark:border-white/10 rounded-2xl overflow-hidden self-start select-none bg-white dark:bg-transparent">
+                <button
+                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                  className="px-4 py-3 hover:bg-customGray-light dark:hover:bg-white/5 transition-colors font-bold"
+                >
+                  -
+                </button>
+                <span className="px-6 py-3 self-center font-bold text-sm w-14 text-center">{quantity}</span>
+                <button
+                  onClick={() => setQuantity((q) => Math.min(currentProduct.stock, q + 1))}
+                  className="px-4 py-3 hover:bg-customGray-light dark:hover:bg-white/5 transition-colors font-bold"
+                >
+                  +
+                </button>
               </div>
             )}
 

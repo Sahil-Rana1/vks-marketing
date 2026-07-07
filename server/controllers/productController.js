@@ -2,7 +2,7 @@ import Product from '../models/Product.js';
 import mongoose from 'mongoose';
 import { uploadImage } from '../config/cloudinary.js';
 
-const MOCK_PRODUCTS_DATA = [
+export const MOCK_PRODUCTS_DATA = [
   {
     _id: 'mock_p1',
     title: '3 in 1 Soap Dispenser with Sponge Holder',
