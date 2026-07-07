@@ -690,29 +690,7 @@ const Home = () => {
         )}
       </section>
 
-      {/* SECTION 6: VKS MANIFESTO */}
-      <section className="hidden md:block py-16 bg-gray-50/40 dark:bg-[#0A0D14] border-b border-gray-150 dark:border-white/5 transition-colors duration-300">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto px-8 text-center flex flex-col items-center"
-        >
-          <div className="w-12 h-12 mb-6 border-4 border-primary rounded-t-xl border-b-0 relative flex items-center justify-center bg-primary/5">
-            <div className="absolute bottom-0 left-0 right-1/4 h-[3px] bg-primary" />
-            <FiAward className="text-lg text-primary animate-pulse" />
-          </div>
 
-          <h2 className="text-xl sm:text-2xl font-bold leading-relaxed text-gray-800 dark:text-gray-200" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            "Order is not merely the absence of clutter; it is the presence of clarity. We design objects that transform daily routines into visual statements."
-          </h2>
-          <div className="space-y-0.5 mt-6">
-            <p className="text-[9px] font-bold uppercase tracking-wider text-primary" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>VKS Marketing Manifesto</p>
-            <p className="text-xs font-semibold text-gray-450 dark:text-gray-500">Premium Utility & Home Aesthetics</p>
-          </div>
-        </motion.div>
-      </section>
 
       {/* SECTION 7: TESTIMONIALS */}
       <section className="hidden md:block py-16 bg-white dark:bg-[#0E111A] border-b border-gray-200/50 dark:border-white/5 w-full px-8 md:px-16 lg:px-24 transition-colors duration-300">
