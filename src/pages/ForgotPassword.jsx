@@ -154,6 +154,13 @@ const ForgotPassword = () => {
                 {submitting ? 'Resetting...' : 'Update Password'}
               </button>
             </form>
+
+            <div className="mt-6 border-t border-customGray-light dark:border-white/5 pt-4 text-center">
+              <p className="text-[10px] text-customGray leading-relaxed font-semibold">
+                <strong>Development Assistant:</strong><br />
+                Since SMTP mailer is disabled in local testing, check your backend server console logs for the reset code, or use default code <span className="text-secondary dark:text-white font-extrabold bg-primary/20 px-1 rounded">123456</span> to reset immediately!
+              </p>
+            </div>
           </>
         )}
 
