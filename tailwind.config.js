@@ -9,12 +9,12 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#F59E0B',
-          light: '#FBBF24',
-          dark: '#D97706'
+          DEFAULT: '#FF6B00',
+          light: '#FFA366',
+          dark: '#CC5200'
         },
         secondary: '#111827',
-        bgLight: '#F5F5F3',
+        bgLight: '#FFFFFF',
         dark: '#000000',
         white: '#FFFFFF',
         customGray: {

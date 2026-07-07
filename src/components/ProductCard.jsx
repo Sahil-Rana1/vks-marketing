@@ -97,7 +97,7 @@ const ProductCard = ({ product }) => {
   return (
     <>
       <div
-        className="bg-white dark:bg-[#131722] border border-black/[0.04] dark:border-white/5 rounded-[24px] overflow-hidden relative flex flex-col h-full group shadow-[0_12px_35px_rgba(139,92,26,0.025)] hover:-translate-y-2 hover:border-primary/40 dark:hover:border-primary/30 hover:shadow-[0_22px_45px_rgba(245,158,11,0.07)] dark:hover:shadow-[0_20px_40px_rgba(245,158,11,0.15)] transition-all duration-500"
+        className="bg-white dark:bg-[#131722] border border-gray-200/80 dark:border-white/5 rounded-[24px] overflow-hidden relative flex flex-col h-full group shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:-translate-y-1.5 hover:border-primary/40 dark:hover:border-primary/30 hover:shadow-[0_20px_40px_rgba(255,107,0,0.08)] dark:hover:shadow-[0_20px_40px_rgba(255,107,0,0.15)] transition-all duration-500"
       >
         {/* Wishlist Button Overlay */}
         <button
@@ -119,7 +119,7 @@ const ProductCard = ({ product }) => {
         )}
 
         {/* Product Image Area */}
-        <Link to={`/product/${product.slug}`} className="block relative aspect-square overflow-hidden bg-[#F5F5F3] dark:bg-black/20 p-4 flex items-center justify-center">
+        <Link to={`/product/${product.slug}`} className="block relative aspect-square overflow-hidden bg-gray-50/40 dark:bg-black/20 p-4 flex items-center justify-center">
           <img
             src={product.images[0]}
             alt={product.title}
@@ -189,7 +189,7 @@ const ProductCard = ({ product }) => {
             {product.stock > 0 ? (
               <button
                 onClick={handleQuickAdd}
-                className="flex items-center gap-1 py-2.5 px-3 bg-secondary text-white dark:bg-primary dark:text-black rounded-xl hover:bg-primary hover:text-black transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.4)]"
+                className="flex items-center gap-1 py-2.5 px-3 bg-secondary text-white dark:bg-primary dark:text-black rounded-xl hover:bg-primary hover:text-black transition-all duration-300 group-hover:shadow-[0_4px_15px_rgba(255,107,0,0.25)]"
               >
                 <FiShoppingCart className="w-4 h-4" />
                 <span className="max-w-0 overflow-hidden group-hover:max-w-[40px] transition-all duration-300 ease-in-out font-black text-[10px] uppercase tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 ml-1">

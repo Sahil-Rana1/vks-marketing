@@ -104,7 +104,7 @@ const Register = () => {
                   name="name"
                   placeholder="Full Name"
                   {...formik.getFieldProps('name')}
-                  className="w-full bg-[#F5F5F3] dark:bg-black/20 text-sm rounded-xl py-3 pl-10 pr-4 border border-transparent focus:outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-[#131722] focus:shadow-[0_0_15px_rgba(245,158,11,0.06)] transition-all duration-300 text-gray-900 dark:text-white"
+                  className="w-full bg-gray-50 dark:bg-black/20 text-sm rounded-xl py-3 pl-10 pr-4 border border-transparent focus:outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-[#131722] focus:shadow-[0_0_15px_rgba(255,107,0,0.06)] transition-all duration-300 text-gray-900 dark:text-white"
                 />
                 <FiUser className="absolute left-3.5 top-4 text-gray-400 dark:text-gray-600 w-4 h-4" />
               </div>
@@ -122,7 +122,7 @@ const Register = () => {
                   name="email"
                   placeholder="name@example.com"
                   {...formik.getFieldProps('email')}
-                  className="w-full bg-[#F5F5F3] dark:bg-black/20 text-sm rounded-xl py-3 pl-10 pr-4 border border-transparent focus:outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-[#131722] focus:shadow-[0_0_15px_rgba(245,158,11,0.06)] transition-all duration-300 text-gray-900 dark:text-white"
+                  className="w-full bg-gray-50 dark:bg-black/20 text-sm rounded-xl py-3 pl-10 pr-4 border border-transparent focus:outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-[#131722] focus:shadow-[0_0_15px_rgba(255,107,0,0.06)] transition-all duration-300 text-gray-900 dark:text-white"
                 />
                 <FiMail className="absolute left-3.5 top-4 text-gray-400 dark:text-gray-600 w-4 h-4" />
               </div>
@@ -140,7 +140,7 @@ const Register = () => {
                   name="phone"
                   placeholder="10-digit mobile number"
                   {...formik.getFieldProps('phone')}
-                  className="w-full bg-[#F5F5F3] dark:bg-black/20 text-sm rounded-xl py-3 pl-10 pr-4 border border-transparent focus:outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-[#131722] focus:shadow-[0_0_15px_rgba(245,158,11,0.06)] transition-all duration-300 text-gray-900 dark:text-white"
+                  className="w-full bg-gray-50 dark:bg-black/20 text-sm rounded-xl py-3 pl-10 pr-4 border border-transparent focus:outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-[#131722] focus:shadow-[0_0_15px_rgba(255,107,0,0.06)] transition-all duration-300 text-gray-900 dark:text-white"
                 />
                 <FiPhone className="absolute left-3.5 top-4 text-gray-400 dark:text-gray-600 w-4 h-4" />
               </div>
@@ -158,7 +158,7 @@ const Register = () => {
                   name="password"
                   placeholder="••••••••"
                   {...formik.getFieldProps('password')}
-                  className="w-full bg-[#F5F5F3] dark:bg-black/20 text-sm rounded-xl py-3 pl-10 pr-4 border border-transparent focus:outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-[#131722] focus:shadow-[0_0_15px_rgba(245,158,11,0.06)] transition-all duration-300 text-gray-900 dark:text-white"
+                  className="w-full bg-gray-50 dark:bg-black/20 text-sm rounded-xl py-3 pl-10 pr-4 border border-transparent focus:outline-none focus:border-primary/50 focus:bg-white dark:focus:bg-[#131722] focus:shadow-[0_0_15px_rgba(255,107,0,0.06)] transition-all duration-300 text-gray-900 dark:text-white"
                 />
                 <FiLock className="absolute left-3.5 top-4 text-gray-400 dark:text-gray-600 w-4 h-4" />
               </div>

@@ -316,7 +316,7 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-[#F5F5F3] dark:bg-[#0A0D14] text-[#111827] dark:text-gray-100 min-h-screen selection:bg-primary selection:text-black font-sans transition-colors duration-300">
+    <div className="bg-white dark:bg-[#0A0D14] text-[#111827] dark:text-gray-100 min-h-screen selection:bg-primary selection:text-black font-sans transition-colors duration-300">
       
       {/* SECTION 1: HERO SECTION - UNIFIED SLIDESHOW CAROUSEL */}
       <section className="relative pt-32 lg:pt-24 pb-8 lg:pb-12 overflow-hidden bg-white dark:bg-[#0E111A] border-b border-gray-100 dark:border-white/5 transition-colors duration-300">
@@ -403,7 +403,7 @@ const Home = () => {
 
                 {/* Right Column: Premium Active Product Image Frame */}
                 <div className="lg:col-span-5 flex justify-center items-center select-none">
-                  <div className="w-full max-w-[360px] aspect-square rounded-[36px] bg-[#F5F5F3] dark:bg-black/25 p-6 flex items-center justify-center border border-gray-150 dark:border-white/5 shadow-inner transition-colors duration-300 relative group overflow-visible">
+                  <div className="w-full max-w-[360px] aspect-square rounded-[36px] bg-gray-50/70 dark:bg-black/25 p-6 flex items-center justify-center border border-gray-150 dark:border-white/5 shadow-inner transition-colors duration-300 relative group overflow-visible">
                     <img
                       src={activeSlide.image}
                       alt={activeSlide.title}
@@ -454,7 +454,7 @@ const Home = () => {
       </section>
 
       {/* SECTION 2: BENEFIT STRIP */}
-      <section className="bg-[#F5F5F3] dark:bg-[#0A0D14] py-10 border-b border-gray-200/60 dark:border-white/5 transition-colors duration-300">
+      <section className="bg-gray-50/30 dark:bg-[#0A0D14] py-10 border-b border-gray-200/60 dark:border-white/5 transition-colors duration-300">
         <div className="w-full px-8 md:px-16 lg:px-24 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { icon: <FiTruck />, title: 'Fast Delivery', desc: 'Shipped within 24 hours across India' },
@@ -476,7 +476,7 @@ const Home = () => {
       </section>
 
       {/* CLUTTER QUIZ CALL-TO-ACTION BANNER */}
-      <section className="py-6 bg-[#F5F5F3] dark:bg-[#0A0D14] transition-colors duration-300 w-full px-8 md:px-16 lg:px-24 select-none">
+      <section className="py-6 bg-white dark:bg-[#0A0D14] transition-colors duration-300 w-full px-8 md:px-16 lg:px-24 select-none">
         <div className="relative bg-gradient-to-r from-primary to-orange-500 rounded-[32px] p-8 sm:p-10 flex flex-col md:flex-row justify-between items-center gap-6 shadow-xl shadow-primary/5 overflow-hidden group">
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff12_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none" />
           <div className="text-left space-y-2 z-10 relative">
@@ -572,17 +572,17 @@ const Home = () => {
             {/* Countdown timers */}
             <div className="flex items-center gap-3.5 pt-2">
               <div className="flex gap-2.5 select-none">
-                <div className="bg-[#F5F5F3] dark:bg-[#0A0D14] border border-gray-200 dark:border-white/5 rounded-xl p-3 w-14 text-center transition-colors duration-300">
+                <div className="bg-gray-50 dark:bg-[#0A0D14] border border-gray-200 dark:border-white/5 rounded-xl p-3 w-14 text-center transition-colors duration-300">
                   <span className="text-base font-bold text-primary block tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{countdown.hours.toString().padStart(2, '0')}</span>
                   <span className="text-[8px] text-gray-400 font-bold uppercase tracking-wider">Hrs</span>
                 </div>
                 <span className="text-xl text-primary self-center font-light">:</span>
-                <div className="bg-[#F5F5F3] dark:bg-[#0A0D14] border border-gray-200 dark:border-white/5 rounded-xl p-3 w-14 text-center transition-colors duration-300">
+                <div className="bg-gray-50 dark:bg-[#0A0D14] border border-gray-200 dark:border-white/5 rounded-xl p-3 w-14 text-center transition-colors duration-300">
                   <span className="text-base font-bold text-primary block tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{countdown.minutes.toString().padStart(2, '0')}</span>
                   <span className="text-[8px] text-gray-405 font-bold uppercase tracking-wider">Min</span>
                 </div>
                 <span className="text-xl text-primary self-center font-light">:</span>
-                <div className="bg-[#F5F5F3] dark:bg-[#0A0D14] border border-gray-200 dark:border-white/5 rounded-xl p-3 w-14 text-center transition-colors duration-300">
+                <div className="bg-gray-50 dark:bg-[#0A0D14] border border-gray-200 dark:border-white/5 rounded-xl p-3 w-14 text-center transition-colors duration-300">
                   <span className="text-base font-bold text-primary block tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{countdown.seconds.toString().padStart(2, '0')}</span>
                   <span className="text-[8px] text-gray-405 font-bold uppercase tracking-wider">Sec</span>
                 </div>
@@ -643,7 +643,7 @@ const Home = () => {
           </div>
 
           {/* Elegant tab switches in a floating capsule container */}
-          <div className="flex flex-wrap gap-1.5 bg-[#F5F5F3] dark:bg-[#131722]/80 border border-gray-200/50 dark:border-white/5 p-1.5 rounded-full shadow-inner transition-colors duration-300">
+          <div className="flex flex-wrap gap-1.5 bg-gray-100/60 dark:bg-[#131722]/80 border border-gray-200/50 dark:border-white/5 p-1.5 rounded-full shadow-inner transition-colors duration-300">
             {[
               { id: 'featured', label: 'Featured Series' },
               { id: 'trending', label: 'Trending Series' },
@@ -691,7 +691,7 @@ const Home = () => {
       </section>
 
       {/* SECTION 6: VKS MANIFESTO */}
-      <section className="hidden md:block py-16 bg-[#F5F5F3] dark:bg-[#0A0D14] border-b border-gray-150 dark:border-white/5 transition-colors duration-300">
+      <section className="hidden md:block py-16 bg-gray-50/40 dark:bg-[#0A0D14] border-b border-gray-150 dark:border-white/5 transition-colors duration-300">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -755,7 +755,7 @@ const Home = () => {
       </section>
 
       {/* SECTION 7.5: FAQ ACCORDION */}
-      <section className="py-16 bg-[#F5F5F3] dark:bg-[#0A0D14] border-b border-gray-150 dark:border-white/5 w-full px-8 md:px-16 lg:px-24 transition-colors duration-300">
+      <section className="py-16 bg-gray-50/40 dark:bg-[#0A0D14] border-b border-gray-150 dark:border-white/5 w-full px-8 md:px-16 lg:px-24 transition-colors duration-300">
         <div className="max-w-3xl mx-auto space-y-12">
           <div className="text-center space-y-2">
             <p className="text-xs font-bold text-primary uppercase tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Got Questions?</p>
@@ -828,7 +828,7 @@ const Home = () => {
               type="email"
               required
               placeholder="Enter your email address"
-              className="flex-grow px-5 py-3.5 bg-[#F5F5F3] dark:bg-[#0A0D14] border border-gray-200/80 dark:border-white/5 rounded-full text-xs text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-gray-550 focus:outline-none focus:border-primary transition-colors"
+              className="flex-grow px-5 py-3.5 bg-gray-50 dark:bg-[#0A0D14] border border-gray-200/80 dark:border-white/5 rounded-full text-xs text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-gray-550 focus:outline-none focus:border-primary transition-colors"
             />
             <button
               type="submit"
